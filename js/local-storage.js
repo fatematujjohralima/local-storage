@@ -15,3 +15,9 @@ const setObjectToLS = () => {
     localStorage.setItem('customer', customerJSON);
 
 }
+
+const readObjectFromLS = () =>{
+    const customerJSON = localStorage.getItem('customer')
+    const customer = JSON.parse(customerJSON)
+    console.log(customer.name)
+}
