@@ -23,6 +23,22 @@ const getCart = () =>{
     return cart;
 }
 
+const addProductToCart = (product, quantity)=>{
+    const cart = getCart();
+    
+    if(cart[product]){
+        cart[product] = cart[product] + quantity
+    }
+    else{
+        cart[product] = quantity;
+    } 
+
+    console.log('cart', cart)
+    const cartJSON = JSON.stringify(cart);
+    localStorage.setItem('cart', cartJSON)
+}
+
+
 
 const displayProduct = (product, quantity) =>{
     const li = document.createElement('li');
