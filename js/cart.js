@@ -48,3 +48,15 @@ const displayProduct = (product, quantity) =>{
     const ul = document.getElementById('products-container');
     ul.appendChild(li);
 }
+
+
+const displayStoredProducts = () =>{
+    const cart = getCart();
+    for(const product in cart){
+        const quantity = cart[product]
+        console.log(product, quantity)
+        displayProduct(product, quantity)
+    }
+}
+
+displayStoredProducts();
