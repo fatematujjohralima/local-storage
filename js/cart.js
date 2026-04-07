@@ -12,6 +12,17 @@ const handleAddProducts = () => {
     quantityEl.value = '';
 }
 
+const getCart = () =>{
+    let cart = {};
+
+    const cartJSON = localStorage.getItem('cart');
+    if(cartJSON){
+        cart = JSON.parse(cartJSON)
+    }
+
+    return cart;
+}
+
 
 const displayProduct = (product, quantity) =>{
     const li = document.createElement('li');
